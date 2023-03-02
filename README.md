@@ -40,7 +40,14 @@ Il faudra également rajouter la clé suivante pour OpenExchangeApi à la fin du
 OPENEXCHANGE_APP_ID={CLE_API}
 ```
 
-Une fois le fichier .env configuré, il suffit de lancer les commande suivante :
+Le docker configuré utilisé les ports par défaut pour la base de donnée et le serveur web. Si vous souhaitez les modifier, il faudra modifier le fichier docker-compose.yml à la racine du projet et penser à ajouter les ports dans le fichier .env, par exemple :
+
+```
+APP_PORT=81
+FORWARD_DB_PORT=3307
+```
+
+Une fois le fichier .env configuré, il suffit de lancer les commande suivante en veillant que docker soit bien lancé :
 
 ```
 ./vendor/bin/sail up -d
