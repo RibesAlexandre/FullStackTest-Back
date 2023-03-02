@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('rates', function (Blueprint $table) {
             $table->unsignedBigInteger('base_id')->nullable()->index()->after('currency_id');
-            $table->foreign('base_id')->references('id')->on('currencies');
+            $table->foreign('base_id')->references('id')->on('currencies')->cascadeOnDelete();
         });
     }
 

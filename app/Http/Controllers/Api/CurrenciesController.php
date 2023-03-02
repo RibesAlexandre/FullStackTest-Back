@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class CurrenciesController extends Controller
 {
+    /**
+     * Retourne toutes les devises disponibles en BDD
+     *
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
     public function index()
     {
         return Currency::collection(\App\Models\Currency::all());

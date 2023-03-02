@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard.index');
+Route::post('/', [\App\Http\Controllers\DashboardController::class, 'store'])->name('dashboard.store');
+Route::delete('/{id}', [\App\Http\Controllers\DashboardController::class, 'delete'])->name('dashboard.delete');
